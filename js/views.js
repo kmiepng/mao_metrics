@@ -55,7 +55,7 @@ function perfil(){
   <div class="card"><b>${r.length?num(r.reduce((a,b)=>a+b,0)/r.length):"–"}</b><span class="meta">média de patinhas</span></div>
   <div class="card"><b>${fav.length}</b><span class="meta">curtidos</span></div></div>
  <h2>Favoritos</h2>${fav.length?`<div class="grid">${fav.map(g=>cover(g)).join("")}</div>`:EMPTY("Curta jogos (♥) ao registrar para vê-los aqui.")}
- <h2>Dados da sessão de teste</h2><div class="card"><div class="meta">Tempo entre abrir o formulário de registro e salvar (usado para medir a hipótese H2).</div>
+ <h2>Dados da sessão de teste</h2><div class="card"><div class="meta">Tempo entre abrir o formulário de registro e salvar.</div>
  ${t.length?`<table style="margin-top:8px"><tr><th>#</th><th>Jogo</th><th>Tempo</th><th>Com resenha</th></tr>${t.map((x,i)=>`<tr><td>${i+1}</td><td>${esc(GAMES[x.game].title)}</td><td>${x.sec.toFixed(1)} s</td><td>${x.review?"sim":"não"}</td></tr>`).join("")}</table>
   <div style="margin-top:8px">Média: <b>${(t.reduce((a,b)=>a+b.sec,0)/t.length).toFixed(1)} s</b></div>`:EMPTY("Nenhum registro cronometrado ainda.")}
  <div class="row" style="margin-top:12px"><button class="btn ghost" id="resetBtn" onclick="resetAll()">Reiniciar protótipo (novo participante)</button></div></div>`}
