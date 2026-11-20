@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<title>Mao Metrics</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 28'%3E%3Cpath d='M4 26C4 14 6 8 7 2l6 7h6l6-7c1 6 3 12 3 24z' fill='%23ff9f5a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/styles.css">
+<svg width="0" height="0" style="position:absolute">
+ <symbol id="paw" viewBox="0 0 24 24"><g fill="currentColor"><ellipse cx="12" cy="16.2" rx="5.4" ry="4.6"/><ellipse cx="4.9" cy="10.2" rx="2.3" ry="2.9"/><ellipse cx="9.2" cy="5.6" rx="2.3" ry="3"/><ellipse cx="14.8" cy="5.6" rx="2.3" ry="3"/><ellipse cx="19.1" cy="10.2" rx="2.3" ry="2.9"/></g></symbol>
+ <symbol id="cat" viewBox="0 0 32 28"><path d="M4 26C4 14 6 8 7 2l6 7h6l6-7c1 6 3 12 3 24z" fill="var(--accent)"/><ellipse cx="11.5" cy="17" rx="1.6" ry="2.4" fill="#17141a"/><ellipse cx="20.5" cy="17" rx="1.6" ry="2.4" fill="#17141a"/><path d="M14.8 20.6h2.4l-1.2 1.4z" fill="#17141a"/></symbol>
+</svg>
+<header><div class="bar">
+  <div class="logo" onclick="go('inicio')"><svg width="30" height="26"><use href="#cat"/></svg>mao <span>metrics</span></div>
+  <nav id="nav">
+    <button data-v="inicio">Início</button>
+    <button data-v="jogos">Jogos</button>
+    <button data-v="listas">Listas</button>
+    <button data-v="diario">Meu diário</button>
+    <button data-v="perfil">Perfil</button>
+  </nav>
+  <input class="search" id="q" placeholder="Buscar jogo…">
+</div></header>
+<main id="app"></main>
+
+<div class="modal" id="modal"><div class="card">
+  <div class="row" style="justify-content:space-between"><b id="mTitle">Registrar</b><button class="btn ghost" onclick="closeLog()">✕</button></div>
+  <label>Status</label>
+  <div class="seg" id="mStatus">
+    <button data-s="Jogando">🎮 Jogando</button><button data-s="Zerado">🏁 Zerado</button><button data-s="Abandonado">💤 Abandonado</button>
+  </div>
+  <label>Nota em patinhas</label>
+  <div class="row"><div class="rate" id="mRate"></div><span id="mRateTxt" class="meta"></span><span style="margin-left:auto" class="heart" id="mLike" title="Curti">♥</span></div>
+  <label>Data</label><input type="date" id="mDate">
+  <label>Plataforma</label>
+  <select id="mPlat"><option>PC</option><option>PlayStation</option><option>Xbox</option><option>Nintendo Switch</option><option>Celular</option></select>
+  <label>Resenha (opcional)</label><textarea id="mText" rows="3" placeholder="O que você achou?"></textarea>
+  <div class="row" style="margin-top:16px;justify-content:flex-end"><button class="btn" onclick="saveLog()">Salvar no diário</button></div>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script type="module" src="js/main.js"></script>
